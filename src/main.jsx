@@ -6,11 +6,22 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLay from './Mainlay/MainLay';
+import BookCottage from './Pages/BookingCottage/BookCottage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLay />,
+    children: [
+      {
+        path: '/home',
+        element: <Home />
+      },
+      {
+        path: '/bookCottage',
+        element: <BookCottage />
+      } 
+    ]
   },
 ]);
 
