@@ -7,6 +7,10 @@ export default {
 
   theme: {
     extend: {},
+    fontFamily: {
+      right: ["Righteous", "sans-serif"],
+      IBM: ["IBM Plex Sans", "sans- serif"]
+    }
   },
   plugins: [],
 }

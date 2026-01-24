@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import MainLay from './Mainlay/MainLay';
 import BookCottage from './Pages/BookingCottage/BookCottage';
+import Home from './Pages/Home/Home';
+import Cottage from './Pages/Cottage/Cottage';
+import SignIn from './Pages/SignIn/SignIn';
 
 const router = createBrowserRouter([
   {
@@ -14,15 +17,24 @@ const router = createBrowserRouter([
     element: <MainLay />,
     children: [
       {
-        path: '/home',
+        path: '/',
         element: <Home />
       },
       {
         path: '/bookCottage',
         element: <BookCottage />
-      } 
+      },
+      {
+        path: '/cottage',
+        element: <Cottage />
+      } ,
+      
     ]
   },
+  {
+    path: '/signIn',
+    element: <SignIn />
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
