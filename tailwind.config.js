@@ -9,7 +9,8 @@ export default {
     extend: {},
     fontFamily: {
       right: ["Righteous", "sans-serif"],
-      IBM: ["IBM Plex Sans", "sans- serif"]
+      IBM: ["IBM Plex Sans", "sans-serif"],
+      Rubik: ["Rubik", "sans-serif"]
     }
   },
   plugins: [],
