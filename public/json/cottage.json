@@ -1,0 +1,112 @@
+[
+ {
+  "id": 1,
+  "cottage_name": "Lakestone Retreat",
+  "bed_style": "couple",
+  "price": 95,
+  "date_from": "2026-03-01",
+  "date_to": "2026-03-05",
+  "image": "https://i.ibb.co.com/k2N1hc7T/This-is-where-my-heart-feels-at-home-1.jpg",
+  "details": "Stone cottage in the Lake District with wood burner and lake access.",
+  "available": true
+ },
+ {
+  "id": 2,
+  "cottage_name": "Willowbrook Cottage",
+  "bed_style": "family",
+  "price": 120,
+  "date_from": "2026-03-02",
+  "date_to": "2026-03-06",
+  "image": "https://i.ibb.co.com/rP1NVkk/3.jpg",
+  "details": "Two-bedroom countryside cottage in the Cotswolds, close to village pubs.",
+  "available": false
+ },
+ {
+  "id": 3,
+  "cottage_name": "Seacliff Nook",
+  "bed_style": "couple",
+  "price": 85,
+  "date_from": "2026-03-03",
+  "date_to": "2026-03-07",
+  "image": "https://i.ibb.co.com/YT8ywrkh/Plan-871008-NST-Backyard-ADU-Cottage-Studio-or-Home-Office-Escape-298-Square-Feet.jpg",
+  "details": "Compact coastal cottage near Whitby with sea views.",
+  "available": true
+ },
+ {
+  "id": 4,
+  "cottage_name": "Rosehaven Cottage",
+  "bed_style": "family",
+  "price": 140,
+  "date_from": "2026-03-04",
+  "date_to": "2026-03-09",
+  "image": "https://i.ibb.co.com/bRzvR9jD/4.jpg",
+  "details": "Luxury cottage in Cornwall with private garden and patio.",
+  "available": true
+ },
+ {
+  "id": 5,
+  "cottage_name": "Northmoor Hideaway",
+  "bed_style": "single",
+  "price": 75,
+  "date_from": "2026-03-07",
+  "date_to": "2026-03-11",
+  "image": "https://i.ibb.co.com/FkZFy9Y7/5.jpg",
+  "details": "Budget-friendly rural cottage in Northumberland.",
+  "available": true
+ },
+ {
+  "id": 6,
+  "cottage_name": "Highland Ember Lodge",
+  "bed_style": "family",
+  "price": 160,
+  "date_from": "2026-03-08",
+  "date_to": "2026-03-13",
+  "image": "https://i.ibb.co.com/dsT7TcC0/6.jpg",
+  "details": "High-end cottage with hot tub in the Scottish Highlands.",
+  "available": true
+ },
+ {
+  "id": 7,
+  "cottage_name": "Bath Barn Cottage",
+  "bed_style": "couple",
+  "price": 100,
+  "date_from": "2026-03-09",
+  "date_to": "2026-03-12",
+  "image": "https://i.ibb.co.com/9kh5qgVd/7.jpg",
+  "details": "Converted barn cottage near Bath with modern amenities.",
+  "available": false
+ },
+ {
+  "id": 8,
+  "cottage_name": "Riverbend Haven",
+  "bed_style": "family",
+  "price": 130,
+  "date_from": "2026-03-10",
+  "date_to": "2026-03-15",
+  "image": "https://i.ibb.co.com/JjxsBy0s/34-Stunning-River-Houses-That-Make-the-Riverfront-Prettier.jpg",
+  "details": "Riverside cottage in Devon ideal for kayaking and fishing.",
+  "available": true
+ },
+ {
+  "id": 9,
+  "cottage_name": "Peakbeam Cottage",
+  "bed_style": "couple",
+  "price": 105,
+  "date_from": "2026-03-11",
+  "date_to": "2026-03-14",
+  "image": "https://i.ibb.co.com/pjStZs47/Exterior-Trim-White-is-Nautical-Yellow-is-Heritage-Maria-Killam.jpg",
+  "details": "Charming cottage in the Peak District with exposed beams.",
+  "available": true
+ },
+ {
+  "id": 10,
+  "cottage_name": "Norwich Quietude",
+  "bed_style": "single",
+  "price": 80,
+  "date_from": "2026-03-13",
+  "date_to": "2026-03-16",
+  "image": "https://i.ibb.co.com/ccscKkFG/8.jpg",
+  "details": "Quiet retreat cottage on the edge of a Norfolk village.",
+  "available": true
+ }
+]
