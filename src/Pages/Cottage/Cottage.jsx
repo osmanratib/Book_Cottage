@@ -22,16 +22,14 @@ const Cottage = () => {
 
  }, [])
 
-
-
-
  return (
   <div className='p-8'>
    <div className='grid grid-cols-3 items-center gap-10' >
     {
      loading ? <>
       <h1 className='h-screen'  >loading....</h1>
-     </> :
+     </>
+      :
       cottageData.map((cottageData, index) => <AllCottages cottageData={cottageData} key={index} />)
     }
    </div>
