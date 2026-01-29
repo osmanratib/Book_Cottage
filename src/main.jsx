@@ -11,6 +11,7 @@ import Home from './Pages/Home/Home';
 import Cottage from './Pages/Cottage/Cottage';
 import SignIn from './Pages/SignIn/SignIn';
 import SignUp from './Pages/SignUp/SignUp';
+import AuthProvider from './AuthProvider/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+   <AuthProvider>
+      <RouterProvider router={router} />
+   </AuthProvider>
   </StrictMode>,
 )

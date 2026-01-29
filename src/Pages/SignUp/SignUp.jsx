@@ -1,14 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SignUp = () => { 
+const SignUp = () => {
+
+ const handleForm = (e) => {
+
+  e.preventDefault();
+
+  const form = e.target;
+
+  const name = form.name.value;
+  const email = form.email.value;
+  const password = form.password.value;
+
+  console.log(email, name, password);
+
+ }
+
+
+
+
  return (
   <div className='grid justify-center items-center mt-[8%] ' >
 
    <h1 className='text-[24px] font-Rubik mb-5 '>signUp with <span className='text-[24px] font-right'>Cottage Arena</span> </h1>
 
 
-   <form className='space-y-7 border-2 rounded-lg  border-[#0000009a] p-5 ' >
+   <form onSubmit={handleForm} className='space-y-7 border-2 rounded-lg  border-[#0000009a] p-5 ' >
     <div className="name">
      <input className='w-[350px] h-[20px] p-5 border-2 border-black outline-none rounded-md' type="text" name='name' placeholder='name' required />
     </div>
