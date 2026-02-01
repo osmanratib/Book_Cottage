@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import { BsEyeFill } from "react-icons/bs";
 import { RiEyeCloseFill } from "react-icons/ri";
 import { sendEmailVerification } from 'firebase/auth';
-import { auth } from '../../Firebase/Firebase';
 
 const SignUp = () => {
 
@@ -57,12 +56,15 @@ const SignUp = () => {
 
       createUser(email, password)
          .then(res => {
-            console.log(res)
-            Swal.fire({
-               title: "sign up successfully !",
-               icon: "success",
-               draggable: true
-            });
+            console.log(res) ; 
+            sendEmailVerification(res.user)
+               .then(() => {
+                  Swal.fire({
+                     title: "sign up successfully and email send (also check spam)",
+                     icon: "success",
+                     draggable: true
+                  });
+               })
             form.reset();
             navigate('/');
          }
@@ -74,24 +76,6 @@ const SignUp = () => {
             setError(err.message);
          })
 
-
-      sendEmailVerification(auth, createUser)
-         .then(() => {
-            Swal.fire({
-               title: "please check your email for verification (also check spam)",
-               icon: "success",
-               draggable: true
-            })
-         })
-         .catch((error) => {
-            if (console.error(error)) {
-               Swal.fire({
-                  title: "send verification link failed !",
-                  icon: "error",
-                  draggable: true
-               });
-            }
-         })
 
    }
 
