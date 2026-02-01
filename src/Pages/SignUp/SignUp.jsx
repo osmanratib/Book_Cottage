@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { BsEyeFill } from "react-icons/bs";
@@ -9,9 +9,10 @@ import { auth } from '../../Firebase/Firebase';
 
 const SignUp = () => {
 
-   const { createUser  } = useContext(AuthContext);
+   const { createUser } = useContext(AuthContext);
    const [error, setError] = useState(null);
    const [visible, setVisible] = useState(true);
+   const navigate = useNavigate();
 
 
    const handleForm = (e) => {
@@ -62,32 +63,36 @@ const SignUp = () => {
                icon: "success",
                draggable: true
             });
+            form.reset();
+            navigate('/');
          }
+
+
          )
          .catch(err => {
             console.error(err)
             setError(err.message);
-         }) 
-
-         
-      sendEmailVerification(auth , createUser)
-      .then(() =>  {
-         Swal.fire({
-            title: "please check your email for verification (also check spam)",
-            icon: "success",
-            draggable: true
          })
-      }) 
-      .catch((error) => {
-        if(console.error(error)){
-           Swal.fire({
-              title: "send verification link failed !",
-              icon: "error",
-              draggable: true
-           });
-        }
-      })
-         
+
+
+      sendEmailVerification(auth, createUser)
+         .then(() => {
+            Swal.fire({
+               title: "please check your email for verification (also check spam)",
+               icon: "success",
+               draggable: true
+            })
+         })
+         .catch((error) => {
+            if (console.error(error)) {
+               Swal.fire({
+                  title: "send verification link failed !",
+                  icon: "error",
+                  draggable: true
+               });
+            }
+         })
+
    }
 
    return (
