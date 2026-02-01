@@ -4,10 +4,12 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { BsEyeFill } from "react-icons/bs";
 import { RiEyeCloseFill } from "react-icons/ri";
+import { sendEmailVerification } from 'firebase/auth';
+import { auth } from '../../Firebase/Firebase';
 
 const SignUp = () => {
 
-   const { createUser } = useContext(AuthContext);
+   const { createUser  } = useContext(AuthContext);
    const [error, setError] = useState(null);
    const [visible, setVisible] = useState(true);
 
@@ -65,7 +67,27 @@ const SignUp = () => {
          .catch(err => {
             console.error(err)
             setError(err.message);
+         }) 
+
+         
+      sendEmailVerification(auth , createUser)
+      .then(() =>  {
+         Swal.fire({
+            title: "please check your email for verification (also check spam)",
+            icon: "success",
+            draggable: true
          })
+      }) 
+      .catch((error) => {
+        if(console.error(error)){
+           Swal.fire({
+              title: "send verification link failed !",
+              icon: "error",
+              draggable: true
+           });
+        }
+      })
+         
    }
 
    return (
