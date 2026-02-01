@@ -56,7 +56,7 @@ const SignUp = () => {
 
       createUser(email, password)
          .then(res => {
-            console.log(res) ; 
+            console.log(res);
             sendEmailVerification(res.user)
                .then(() => {
                   Swal.fire({

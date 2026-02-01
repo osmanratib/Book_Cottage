@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BsEyeFill } from "react-icons/bs";
 import { RiEyeCloseFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const SignIn = () => {
 
  const [visible, setVisible] = useState(true);
+ const { signin } = useContext(AuthContext);
+
+
 
  const handleSignIn = (e) => {
   e.preventDefault();
@@ -14,7 +18,17 @@ const SignIn = () => {
 
   const email = form.email.value;
   const password = form.password.value;
-  console.log(email, password);
+  console.log(email, password); 
+
+  signin(email , password)
+  .then(res => {
+      console.log(res) ;
+
+  }) 
+  .catch(error =>  {
+    console.error(error) ; 
+  })
+
  }
 
  return (
@@ -30,7 +44,7 @@ const SignIn = () => {
     <div className="password flex items-center justify-between w-[350px] h-[20px] p-5 border-2 border-black rounded-md">
      <input className=' outline-none ' type={visible ? "password" : "text"} name='password' placeholder='password' required />
      <div><span onClick={() => setVisible(!visible)} >{visible ? <BsEyeFill /> : <RiEyeCloseFill />}</span></div>
-    </div> 
+    </div>
 
     <div className="submit ">
      <input className='w-[350px] h-[30px] border-2 cursor-pointer  bg-black
@@ -40,7 +54,7 @@ const SignIn = () => {
     <div className='flex items-center gap-3 font-Rubik capitalize' >
      <h1>Don't have an account ? </h1>
      <Link to={'/signup'} className='underline text-blue-400' >sign up</Link>
-    </div> 
+    </div>
 
 
 
